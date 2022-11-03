@@ -38,6 +38,13 @@ namespace MeteTurkay{
                 touchedPlayer = other.gameObject;
             }
         }
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                touchedPlayer = null;
+            }
+        }
         public void ResetAll()
         {
             isPushed = false;
