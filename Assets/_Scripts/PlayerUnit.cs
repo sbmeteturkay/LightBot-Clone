@@ -27,8 +27,9 @@ namespace MeteTurkay
         public void MoveFoward(Direction side)
         {
             canAct = false;
-            print("move");
-            transform.DOMove((Vector3.forward* oneSquareLenght) + transform.position, animationTime).OnComplete(() => {
+            print("move"+transform.forward);
+            //scary
+            transform.DOLocalMove(new Vector3((transform.forward * oneSquareLenght).x + transform.localPosition.x,transform.localPosition.y, (transform.forward * oneSquareLenght).z + transform.localPosition.z), animationTime).OnComplete(() => {
                 canAct = true;
             });
         }
@@ -44,13 +45,11 @@ namespace MeteTurkay
             print("turn" + side.ToString()) ;
             int way = side == Direction.Right ? 1 : -1;
             float rotation = transform.localEulerAngles.y;
-            print(rotation);
-            print(rotation + (90 * way));
             transform.DORotate(new Vector3(0,rotation+(90*way),0), animationTime).OnComplete(()=> {
                 canAct = true;
             });
         }
-        public void ResetDotween()
+        public void ResetPlayer()
         {
             transform.DOKill();
             transform.DOJump(start.position,1,1,2f).OnComplete(() => {
