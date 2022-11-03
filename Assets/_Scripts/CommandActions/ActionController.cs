@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 namespace MeteTurkay
 {
     public class ActionController : MonoBehaviour
@@ -11,6 +12,7 @@ namespace MeteTurkay
         [SerializeField] PlayerUnit playerUnit;
         [SerializeField] Stack<string> commandList=new();
         [SerializeField] GameObject ActionContainer;
+        public static event Action resetButtons;
         private void Update()
         {
             if (playerUnit.canAct)
@@ -66,6 +68,7 @@ namespace MeteTurkay
             ActionContainer.transform.DestroyChildren();
             commandList.Clear();
             playerUnit.ResetPlayer();
+            resetButtons?.Invoke();
         }
         public  void SetCanAct(bool act)
         {

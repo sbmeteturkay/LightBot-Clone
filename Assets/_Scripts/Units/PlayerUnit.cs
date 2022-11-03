@@ -3,6 +3,9 @@
 
 using UnityEngine;
 using DG.Tweening;
+using System.Collections.Generic;
+using System;
+
 namespace MeteTurkay
 {
     public class PlayerUnit : MonoBehaviour
@@ -15,6 +18,7 @@ namespace MeteTurkay
         [SerializeField] MoveCheck walkCheck;
         [SerializeField] MoveCheck jumpDownCheck;
         public bool canAct = false;
+        public static event Action<GameObject> playerPush; 
         private void Start()
         {
             start = transform.position;
@@ -65,7 +69,7 @@ namespace MeteTurkay
             canAct = false;
             print("press");
             animator.SetTrigger("press");
-            this.Wait(1f, () => { canAct = true; });
+            this.Wait(1f, () => {playerPush?.Invoke(gameObject); canAct = true; });
             
         }
         public void TurnAction(Direction side)
