@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CommandPut
+  - Foward
+  - Jump
+  - Press
+  - TurnRight
+  - TurnLeft
   layers:
   - Default
   - TransparentFX
