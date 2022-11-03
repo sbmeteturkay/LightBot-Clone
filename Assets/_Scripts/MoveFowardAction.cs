@@ -9,7 +9,7 @@ namespace MeteTurkay
         public MoveFowardAction(PlayerUnit playerUnit, Direction side) : base(playerUnit) { this.side = side; }
         public override void Execute()
         {
-            _unit.TurnAction(side);
+            _unit.MoveFoward(side);
         }
     }
 }

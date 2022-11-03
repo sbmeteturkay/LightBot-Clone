@@ -36,7 +36,7 @@ namespace MeteTurkay
                     OnTurn(Direction.Right);
                     break;
                 case "TurnLeft":
-                    OnTurn(Direction.Right);
+                    OnTurn(Direction.Left);
                     break;
                 case "CommandState.Press":
                     OnPress();
