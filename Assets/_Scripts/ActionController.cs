@@ -38,7 +38,7 @@ namespace MeteTurkay
                 case "TurnLeft":
                     OnTurn(Direction.Left);
                     break;
-                case "CommandState.Press":
+                case "Press":
                     OnPress();
                     break;
                 default:
@@ -56,10 +56,16 @@ namespace MeteTurkay
             //reverese for for getting first object last, to pop up first in stack
             for(int i = lastIndex-1; 0 <= i; i--)
             {
-                print(i);
                 commandList.Push(ActionContainer.transform.GetChild(i).tag);
             }
             SetCanAct(true);
+        }
+        //used in reset button
+        public void ResetAll()
+        {
+            ActionContainer.transform.DestroyChildren();
+            commandList.Clear();
+            playerUnit.ResetPlayer();
         }
         public  void SetCanAct(bool act)
         {

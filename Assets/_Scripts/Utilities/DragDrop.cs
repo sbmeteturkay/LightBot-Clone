@@ -34,10 +34,9 @@ namespace MeteTurkay{
             {
                 Destroy(gameObject);
             }
-            else if(eventData.pointerCurrentRaycast.gameObject.tag=="CommandPut"&& eventData.pointerCurrentRaycast.gameObject.transform.childCount<5)
+            else if(eventData.pointerCurrentRaycast.gameObject.tag=="CommandPut"&& eventData.pointerCurrentRaycast.gameObject.transform.childCount<5&&clone)
             {
                 gameObject.transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
-                print(eventData.pointerCurrentRaycast.gameObject.name);
                 canvasGroup.alpha = 1f;
                 canvasGroup.blocksRaycasts = true;
                 clone = false;
