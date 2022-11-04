@@ -24,7 +24,7 @@ Digits mean normal blocks and how many are them in that space in a row. for exam
 Letters mean normal blocks+1 press button top of them. A means 1 press button. B means 1 normal block + 1 press button on it etc...
 
 Lets look our scene for better example.
-![image](https://user-images.githubusercontent.com/44952253/200055844-07bcc78e-387c-4b47-b3db-207cde9d4583.png)
+![image](https://user-images.githubusercontent.com/44952253/200057822-0e8981e5-c248-4ea6-9008-94a9d578589a.png)
 
 After creating text file, you need to create a Level file on Resources/Levels. Right Click on Project window, Create->Level Generation->Level.
 You can set up your default block prefab and press button prefab here. And you need to assign your level text file that you want to use in this level. You can look other Level files for other references.
