@@ -13,6 +13,7 @@ namespace MeteTurkay
         [SerializeField] Stack<string> commandList=new();
         [SerializeField] GameObject ActionContainer;
         public static event Action resetButtons;
+        [SerializeField]bool isPlaying = false;
         private void Update()
         {
             if (playerUnit.canAct)
@@ -24,7 +25,9 @@ namespace MeteTurkay
         void GetNextState()
         {
             if (commandList.Count == 0)
+            {
                 return;
+            }
             string action = commandList.Pop();
             switch (action)
             {
@@ -46,11 +49,13 @@ namespace MeteTurkay
                 default:
                     break;
             }
-
         }
         //used in GO button
         public void SetCommandsFromList()
         {
+            bool tempPlayer = isPlaying;
+            if(isPlaying)
+                Restart();
             int lastIndex = ActionContainer.transform.childCount;
             if (lastIndex == 0)
                 return;
@@ -60,13 +65,33 @@ namespace MeteTurkay
             {
                 commandList.Push(ActionContainer.transform.GetChild(i).tag);
             }
-            SetCanAct(true);
+            if(!tempPlayer)
+                SetCanAct(true);
+            isPlaying = true;
         }
         //used in reset button
         public void ResetAll()
         {
             ActionContainer.transform.DestroyChildren();
             commandList.Clear();
+            isPlaying = false;
+            playerUnit.ResetPlayer();
+            resetButtons?.Invoke();
+        }
+        public void Restart()
+        {
+            isPlaying = false;
+            playerUnit.ResetPlayer();
+            resetButtons?.Invoke();
+        }
+        //used in level selection, do code review here
+        public void RestartIfPlaying()
+        {
+            if (!isPlaying)
+                return;
+            ActionContainer.transform.DestroyChildren();
+            commandList.Clear();
+            isPlaying = false;
             playerUnit.ResetPlayer();
             resetButtons?.Invoke();
         }

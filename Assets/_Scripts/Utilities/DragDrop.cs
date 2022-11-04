@@ -47,7 +47,8 @@ namespace MeteTurkay{
                 Destroy(gameObject);
             }
         }
-
+        public void PutContainer() { 
+        }
         public void OnPointerDown(PointerEventData eventData)
         {
             if (clone)

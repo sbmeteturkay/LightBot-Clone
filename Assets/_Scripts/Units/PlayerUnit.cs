@@ -98,8 +98,9 @@ namespace MeteTurkay
         }
         public void ResetPlayer()
         {
-            transform.DOKill();
+            print("reset");
             canAct = false;
+            transform.DOKill();
             animator.SetTrigger("jump");
             AudioManager.Play(AudioClipName.Jump);
             transform.DORotate(Vector3.zero, animationTime);
