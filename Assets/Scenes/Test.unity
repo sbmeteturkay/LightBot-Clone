@@ -354,7 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 0}
 --- !u!114 &165261810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 0}
 --- !u!114 &176597167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 0}
 --- !u!114 &197150936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,7 +1243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 0}
 --- !u!114 &394661759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1944,6 +1944,7 @@ GameObject:
   - component: {fileID: 534302430}
   - component: {fileID: 534302433}
   - component: {fileID: 534302432}
+  - component: {fileID: 534302434}
   m_Layer: 5
   m_Name: Press
   m_TagString: Press
@@ -2036,7 +2037,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 534302434}
+--- !u!114 &534302434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534302428}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0.7079072, b: 1, a: 1}
+  m_EffectDistance: {x: 10, y: 10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &543711892
 GameObject:
   m_ObjectHideFlags: 0
@@ -3226,6 +3242,7 @@ GameObject:
   - component: {fileID: 649792286}
   - component: {fileID: 649792289}
   - component: {fileID: 649792288}
+  - component: {fileID: 649792290}
   m_Layer: 5
   m_Name: TurnLeft
   m_TagString: TurnLeft
@@ -3318,7 +3335,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 649792290}
+--- !u!114 &649792290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649792284}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0.7079072, b: 1, a: 1}
+  m_EffectDistance: {x: 10, y: 10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &781366990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,7 +3939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 0}
 --- !u!114 &831653739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4245,7 +4277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 0}
 --- !u!114 &906924006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5315,7 +5347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 0}
 --- !u!114 &1232318347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5687,7 +5719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 0}
 --- !u!114 &1298148461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5843,6 +5875,7 @@ GameObject:
   - component: {fileID: 1311208374}
   - component: {fileID: 1311208377}
   - component: {fileID: 1311208376}
+  - component: {fileID: 1311208378}
   m_Layer: 5
   m_Name: Foward
   m_TagString: Foward
@@ -5935,7 +5968,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 1311208378}
+--- !u!114 &1311208378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311208372}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0.7079072, b: 1, a: 1}
+  m_EffectDistance: {x: 10, y: 10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1330609268
 GameObject:
   m_ObjectHideFlags: 0
@@ -6679,6 +6727,7 @@ GameObject:
   - component: {fileID: 1432558977}
   - component: {fileID: 1432558980}
   - component: {fileID: 1432558979}
+  - component: {fileID: 1432558981}
   m_Layer: 5
   m_Name: Jump
   m_TagString: Jump
@@ -6771,7 +6820,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 1432558981}
+--- !u!114 &1432558981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432558975}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0.7079072, b: 1, a: 1}
+  m_EffectDistance: {x: 10, y: 10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1436301053
 GameObject:
   m_ObjectHideFlags: 0
@@ -6974,6 +7038,7 @@ GameObject:
   - component: {fileID: 1498749752}
   - component: {fileID: 1498749755}
   - component: {fileID: 1498749754}
+  - component: {fileID: 1498749756}
   m_Layer: 5
   m_Name: TurnRight
   m_TagString: TurnRight
@@ -7066,7 +7131,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 1498749756}
+--- !u!114 &1498749756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498749750}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0.7079072, b: 1, a: 1}
+  m_EffectDistance: {x: 10, y: 10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1539930758
 GameObject:
   m_ObjectHideFlags: 0
@@ -7133,7 +7213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 0}
 --- !u!114 &1539930762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8218,7 +8298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 1
   canvas: {fileID: 1301501021}
-  putContainer: {fileID: 0}
+  outline: {fileID: 0}
 --- !u!114 &1922832034
 MonoBehaviour:
   m_ObjectHideFlags: 0

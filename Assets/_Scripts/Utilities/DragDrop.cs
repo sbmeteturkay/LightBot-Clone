@@ -2,13 +2,16 @@
 //follow: https://github.com/sbmeteturkay
 
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using DG.Tweening;
+
 namespace MeteTurkay{
     public class DragDrop : MonoBehaviour, IPointerDownHandler, IEndDragHandler, IBeginDragHandler, IDragHandler
     {
         [SerializeField] bool clone = false;
         [SerializeField] private Canvas canvas;
-        [SerializeField] private GameObject putContainer;
+        [SerializeField] Outline outline;
         private CanvasGroup canvasGroup;
         RectTransform rectTransform;
         private void Awake()
@@ -19,8 +22,10 @@ namespace MeteTurkay{
         public void OnBeginDrag(PointerEventData eventData)
         {
 
-            canvasGroup.alpha = .8f;
+            canvasGroup.alpha = .9f;
             canvasGroup.blocksRaycasts = false;
+            transform.DOScale(1.5f, 0.2f);
+            outline.enabled = true;
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -41,13 +46,13 @@ namespace MeteTurkay{
                 canvasGroup.alpha = 1f;
                 canvasGroup.blocksRaycasts = true;
                 clone = false;
+                outline.enabled = false;
+                transform.DOScale(1, 0.2f);
             }
             else
             {
                 Destroy(gameObject);
             }
-        }
-        public void PutContainer() { 
         }
         public void OnPointerDown(PointerEventData eventData)
         {
@@ -55,6 +60,8 @@ namespace MeteTurkay{
             {
                 var obj = Instantiate(gameObject, transform.parent);
                 obj.transform.SetSiblingIndex(transform.GetSiblingIndex());
+                //to prevent be lower than other drag buttons
+                transform.SetAsLastSibling();
             }
 
         }
