@@ -16,6 +16,7 @@ namespace MeteTurkay{
 
         public void Initialization()
         {
+            numbersOfPressObject = 0;
             level.Initialization();
             if (_levelGo!=null)
                 Destroy(_levelGo);
@@ -55,7 +56,8 @@ namespace MeteTurkay{
             {
                 for (int i=0; i < char.GetNumericValue(symbol); i++)
                 {
-                    position.y += i * level.spacingY;
+                    if (i != 0)
+                        position.y += Mathf.Pow(1,i)* level.spacingY;
                     GameObject temp = Instantiate(level.defaultButton, position, Quaternion.identity, _levelGo.transform);
                     temp.name = $"OBJECT {xPosition}:{yPosition}";
                 }
@@ -65,7 +67,8 @@ namespace MeteTurkay{
                 int index = ((int)char.ToUpper(symbol)) - 64;
                 for(int i= 0; i < index; i++)
                 {
-                    position.y += i * level.spacingY;
+                    if(i!=0)
+                        position.y +=level.spacingY;
                     if (i == index-1)
                     {
                         GameObject temp = Instantiate(level.pressButton, position, Quaternion.identity, _levelGo.transform);

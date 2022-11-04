@@ -14,7 +14,13 @@ namespace MeteTurkay{
 		[SerializeField] int pressNeededButton = 0;
         List<PushButton> pushButtons = new();
         public static event Action finished;
-        //[Header("UI")]
+        [SerializeField]int currentLevel = 0;
+        [SerializeField]int levelCount=0;
+        [SerializeField] Animator cameraAnimator;
+        [Header("UI")]
+        [SerializeField] GameObject stackUI;
+        [SerializeField] GameObject completedUI;
+        //
         //[SerializeField] GameObject levelButton;
         //[SerializeField] GameObject gridParentForButtons;
         //List<Level> levels = new();
@@ -23,11 +29,14 @@ namespace MeteTurkay{
             PushButton.buttonPressed += PushButton_buttonPressed;
             ActionController.resetButtons += ActionController_resetButtons;
             //CreateLevelButtons();
+            string filePath = Application.dataPath + "/Resources/Levels";
+            levelCount = Directory.GetFiles(filePath).Length / 2;
         }
 
         private void ActionController_resetButtons()
         {
             pressNeededButton= levelGenerator.numbersOfPressObject;
+            pushButtons.Clear();
         }
 
         private void PushButton_buttonPressed(PushButton obj)
@@ -38,16 +47,41 @@ namespace MeteTurkay{
             }
             if (pushButtons.Count == pressNeededButton)
             {
-                finished?.Invoke();
+                LevelCompleteActions();
             }
+        }
+
+        private void LevelCompleteActions()
+        {
+            finished?.Invoke();
+            cameraAnimator.SetTrigger("closeUp");
+            stackUI.SetActive(false);
+            completedUI.SetActive(true);
+            pushButtons.Clear();
         }
 
         public void StartLevel(int i)
         {
             Level level = Resources.Load<Level>("Levels/" + i.ToString());
+            currentLevel = i;
             levelGenerator.level = level;
 			levelGenerator.Initialization();
 			pressNeededButton = levelGenerator.numbersOfPressObject;
+            cameraAnimator.SetTrigger("mainPosition");
+            stackUI.SetActive(true);
+            completedUI.SetActive(false);
+        }
+        //used in next level button, this button also contains ActionController.Reset() on click
+        public void NextLevel()
+        {
+            if (currentLevel + 1 <= levelCount)
+            {
+                StartLevel(currentLevel + 1);
+            }
+            else
+            {
+                StartLevel(1);
+            }
         }
         //We can Create buttons dynamically, but i will look it later
 

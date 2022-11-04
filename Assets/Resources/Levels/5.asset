@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31704090632179747b96ce2ecf93c5bf, type: 3}
   m_Name: 5
   m_EditorClassIdentifier: 
-  levelTextAsset: {fileID: 4900000, guid: 0ed54ccae95944045a89cf08673a22e8, type: 3}
+  levelTextAsset: {fileID: 4900000, guid: f238ee2e8b7b1df48b0cdd2e1bc16b09, type: 3}
   defaultButton: {fileID: 4394625569052017054, guid: 6aeef819c93995c4a88a96f589af25ea, type: 3}
   pressButton: {fileID: 4186546560600710788, guid: 99ea8232bd933824f8a667b11321fe17, type: 3}
   spacingX: 3

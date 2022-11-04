@@ -19,6 +19,11 @@ namespace MeteTurkay{
             meshRenderer = GetComponent<MeshRenderer>();
             defaultColor = meshRenderer.material.color;
         }
+        private void OnDestroy()
+        {
+            PlayerUnit.playerPush -= PlayerUnit_playerPush;
+            ActionController.resetButtons -= ActionController_resetButtons;
+        }
 
         private void ActionController_resetButtons()
         {
