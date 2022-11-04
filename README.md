@@ -1,5 +1,5 @@
 # LightBot-Clone
-2 day case study Unity 3D game with command pattern
+2 day case study Unity 3D game.
 
 ## Project overview
  This project build on Unity using URP. Test scene contains 10 different level. UI designed for portrait mode and scales for different aspect ratios. Camera set on orthographic mode, used Cinemachine transition effects, Player actions build used command desing pattern.
