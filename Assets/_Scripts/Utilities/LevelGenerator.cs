@@ -12,7 +12,6 @@ namespace MeteTurkay{
         private Vector3 _startPosition;
         private GameObject _levelGo;
         public int numbersOfPressObject=0;
-        //private void Start() => Initialization();
 
         public void Initialization()
         {
@@ -47,8 +46,6 @@ namespace MeteTurkay{
         }
         private void PlacePrefab(char symbol, int xPosition, int yPosition)
         {
-            //level.GetObjectCollection().TryGetValue(symbol, out GameObject obj);
-           // Debug.Log($"OBJ NULL : {obj}");
             //You might want to leave a space empty...
             if (symbol == 0) { return; }
             Vector3 position = _startPosition + new Vector3(xPosition*level.spacingX,0, (2-yPosition) * level.spacingX);

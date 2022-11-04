@@ -20,10 +20,6 @@ namespace MeteTurkay{
         [Header("UI")]
         [SerializeField] GameObject stackUI;
         [SerializeField] GameObject completedUI;
-        //
-        //[SerializeField] GameObject levelButton;
-        //[SerializeField] GameObject gridParentForButtons;
-        //List<Level> levels = new();
         private void Start()
         {
             PushButton.buttonPressed += PushButton_buttonPressed;
