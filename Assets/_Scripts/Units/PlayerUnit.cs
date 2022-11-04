@@ -21,8 +21,15 @@ namespace MeteTurkay
         public static event Action<GameObject> playerPush; 
         private void Start()
         {
+            LevelManager.finished += LevelManager_finished;
             start = transform.position;
         }
+
+        private void LevelManager_finished()
+        {
+            FinishAction();
+        }
+
         public void Jump()
         {
             canAct = false;
@@ -83,6 +90,12 @@ namespace MeteTurkay
                 canAct = true;
             });
         }
+        public void FinishAction()
+        {
+            canAct = false;
+            string animaton = Helpers.CoinFlip() ? "dance" : "dance2";
+            animator.SetTrigger(animaton);
+        }
         public void ResetPlayer()
         {
             transform.DOKill();
@@ -95,6 +108,7 @@ namespace MeteTurkay
                 canAct = true;
             });
         }
+        
         public void CharSelection(GameObject gameObject)
         {
             gameObject.SetActive(true);

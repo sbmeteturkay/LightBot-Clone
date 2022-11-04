@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31704090632179747b96ce2ecf93c5bf, type: 3}
-  m_Name: Level
+  m_Name: 6
   m_EditorClassIdentifier: 
   levelTextAsset: {fileID: 4900000, guid: 0ed54ccae95944045a89cf08673a22e8, type: 3}
   defaultButton: {fileID: 4394625569052017054, guid: 6aeef819c93995c4a88a96f589af25ea, type: 3}

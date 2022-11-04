@@ -34,7 +34,8 @@ namespace MeteTurkay{
             {
                 Destroy(gameObject);
             }
-            else if(eventData.pointerCurrentRaycast.gameObject.tag=="CommandPut"&& eventData.pointerCurrentRaycast.gameObject.transform.childCount<5&&clone)
+            //10 is limit, we can set it from somewhere in game manager, it stays for now
+            else if(eventData.pointerCurrentRaycast.gameObject.tag=="CommandPut"&& eventData.pointerCurrentRaycast.gameObject.transform.childCount<10&&clone)
             {
                 gameObject.transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
                 canvasGroup.alpha = 1f;

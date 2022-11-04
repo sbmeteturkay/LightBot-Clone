@@ -6,15 +6,19 @@ using UnityEngine;
 namespace MeteTurkay{
 	public class LevelGenerator : MonoBehaviour
 	{
-        [SerializeField] private Level level;
+        [Header("Debug dont change")]
+        public Level level;
         [SerializeField] private Vector3 levelRotation;
         private Vector3 _startPosition;
         private GameObject _levelGo;
-        private void Start() => Initialization();
+        public int numbersOfPressObject=0;
+        //private void Start() => Initialization();
 
-        private void Initialization()
+        public void Initialization()
         {
             level.Initialization();
+            if (_levelGo!=null)
+                Destroy(_levelGo);
             _levelGo = new GameObject
             {
                 name = "Level",
@@ -51,7 +55,6 @@ namespace MeteTurkay{
             {
                 for (int i=0; i < char.GetNumericValue(symbol); i++)
                 {
-                    Debug.LogError("sybol " + i);
                     position.y += i * level.spacingY;
                     GameObject temp = Instantiate(level.defaultButton, position, Quaternion.identity, _levelGo.transform);
                     temp.name = $"OBJECT {xPosition}:{yPosition}";
@@ -59,11 +62,23 @@ namespace MeteTurkay{
             }
             else
             {
-
+                int index = ((int)char.ToUpper(symbol)) - 64;
+                for(int i= 0; i < index; i++)
+                {
+                    position.y += i * level.spacingY;
+                    if (i == index-1)
+                    {
+                        GameObject temp = Instantiate(level.pressButton, position, Quaternion.identity, _levelGo.transform);
+                        numbersOfPressObject++;
+                        temp.name = $"PRESS OBJECT {xPosition}:{yPosition}";
+                    }
+                    else
+                    {
+                        GameObject temp = Instantiate(level.defaultButton, position, Quaternion.identity, _levelGo.transform);
+                        temp.name = $"OBJECT {xPosition}:{yPosition}";
+                    }
+                }
             }
-            //GameObject temp = Instantiate(obj, position, Quaternion.identity);
-            //temp.name = $"OBJECT {xPosition}:{yPosition}";
-            //temp.transform.SetParent(_levelGo.transform);
         }
     }
 }

@@ -55,4 +55,8 @@ public static class Helpers
         }
         yield return null;
     }
+    public static bool CoinFlip()
+    {
+        return Random.Range(0, 2) == 0;
+    }
 }

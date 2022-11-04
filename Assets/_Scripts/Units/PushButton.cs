@@ -3,6 +3,7 @@
 
 using UnityEngine;
 
+using System;
 namespace MeteTurkay{
 	public class PushButton : MonoBehaviour
 	{
@@ -10,6 +11,7 @@ namespace MeteTurkay{
         MeshRenderer meshRenderer;
         GameObject touchedPlayer;
         [SerializeField]Color defaultColor;
+        public static event Action<PushButton> buttonPressed;
         private void Start()
         {
             PlayerUnit.playerPush += PlayerUnit_playerPush;
@@ -29,6 +31,7 @@ namespace MeteTurkay{
             {
                 meshRenderer.material.color = Color.blue;
                 isPushed = true;
+                buttonPressed?.Invoke(this);
             }
         }
         private void OnTriggerEnter(Collider other)
